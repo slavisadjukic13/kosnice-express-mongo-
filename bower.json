@@ -1,0 +1,23 @@
+{
+  "name": "cv",
+  "description": "slavisa djukic's cv",
+  "main": "index.js",
+  "authors": [
+    "slavisadjukic13@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "jquery": "3.1.1"
+  }
+}
