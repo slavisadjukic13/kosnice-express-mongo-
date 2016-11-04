@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    ul
+        - each hive, i in hives
+            li
+                = hive.name
+
+                ul
+                    - each inspection, i in hive.inspections
+                        li detailed inspection:  #{inspection.detailedInspection1}
+                        li detailed inspection:  #{inspection.detailedInspection2}
+                        li detailed inspection:  #{inspection.detailedInspection3}
+
+
+                form(action='/hives/#{hive._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+
+                p
+                    a(href='/hives/#{hive._id}/edit') Edit
+                p
+                    a(href='/hives/#{hive._id}') Show
+    p
+        a(href='/hives/new') add new hive

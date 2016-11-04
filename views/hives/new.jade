@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddHive(name="addhive",method="post",action="/hives")
+        p Name:
+            input#inputName(type="text", placeholder="ex. John Smith", name="name" required="required")
+        p detailed inspection1:
+            input#inputIsLoved(type="checkbox", name="detailedInspection1")
+        p
+            button#btnSubmit(type="submit") submit
