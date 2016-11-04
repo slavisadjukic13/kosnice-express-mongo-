@@ -31,7 +31,6 @@ router.route('/')
                         res.render('hives/index', {
                             title: 'All my Hives kao',
                             "hives" : hives
-                            // "inspections" : hives.inspections
                         });
                     },
                     //JSON response will show all hives in JSON format
