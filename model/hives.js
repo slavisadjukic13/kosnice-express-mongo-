@@ -6,6 +6,10 @@ var inspectionSchema = new mongoose.Schema({
     detailedInspection3: Boolean
 });
 
+//TODO check this out - nested population
+
+// http://mongoosejs.com/docs/api.html#model_Model.populate
+// http://stackoverflow.com/questions/19222520/populate-nested-array-in-mongoose
 
 var hiveSchema = new mongoose.Schema({
     name: {
