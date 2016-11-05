@@ -4,3 +4,7 @@ block content
     h1 detalji kosnice
 
     p Name: #{hive.name}
+
+    ul
+        - each inspection, i in hive.inspections
+            li detailed inspection:  #{inspection.detailedInspection1}
