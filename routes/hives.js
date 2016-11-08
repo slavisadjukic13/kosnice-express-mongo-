@@ -4,6 +4,10 @@ var mongoose = require('mongoose'); //mongo connection
 var bodyParser = require('body-parser'); //parses information from POST
 var methodOverride = require('method-override'); //used to manipulate POST
 
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
+
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -42,7 +46,7 @@ router.route('/')
         });
     })
     //POST a new hive
-    .post(function(req, res) {
+    .post(multer({ dest: './uploads/'}).single('upl'), function(req, res) {
         // Get values from POST request. These can be done through forms or REST calls. These rely on the "name" attributes for forms
         var name = req.body.name;
         var detailedInspection1 = req.body.detailedInspection1;

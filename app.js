@@ -5,6 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
+
 var db = require('./model/db');
 var blob = require('./model/blobs');
 var hive = require('./model/hives');
@@ -32,6 +36,15 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/blobs', blobs);
 app.use('/hives', hives);
+
+
+
+
+
+app.post('/profile', upload.single('avatar'), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+})
 
 
 
